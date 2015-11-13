@@ -35,4 +35,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.github.crossbario:autobahn-android:v0.5.2'
+    compile 'com.github.bryanjos:JavaPhoenixChannels:-SNAPSHOT'
+//    compile('org.phoenixframework.channels:JavaPhoenixChannels:0.1.0-SNAPSHOT') {
+//        exclude module: 'groovy-all'
+//    }
 }
