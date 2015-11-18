@@ -18,13 +18,10 @@ import org.phoenixframework.channels.Socket;
 
 import java.io.IOException;
 
-import de.tavendo.autobahn.WebSocketConnection;
-
 public class MainActivity extends AppCompatActivity {
     private static final String WEB_SOCKET_URL = "ws://192.168.137.179:4000/socket/websocket";
     private static final String TAG = "MainActivity";
 
-    private final WebSocketConnection mConnection = new WebSocketConnection();
     private Socket mSocket;
     private org.phoenixframework.channels.Channel mChannel;
     private EditText mEditText;
@@ -127,14 +124,5 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e(TAG, e.toString());
         }
-    }
-
-    @Override
-    public void onPause() {
-        if (this.mConnection.isConnected()) {
-            this.mConnection.disconnect();
-        }
-
-        super.onPause();
     }
 }
