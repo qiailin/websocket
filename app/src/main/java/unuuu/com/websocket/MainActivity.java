@@ -19,7 +19,13 @@ import org.phoenixframework.channels.Socket;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String WEB_SOCKET_URL = "ws://192.168.137.179:4000/socket/websocket";
+
+    // For hagiya-t
+//    private static final String WEB_SOCKET_URL = "ws://192.168.137.179:4000/socket/websocket";
+
+    // For rei-m
+    private static final String WEB_SOCKET_URL = "ws://192.168.151.4:4000/socket/websocket";
+
     private static final String TAG = "MainActivity";
 
     private Socket mSocket;
@@ -45,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 if (!text.isEmpty()){
                     try {
                         ObjectNode node = new ObjectNode(JsonNodeFactory.instance)
-                            .put("user", "Android")
-                            .put("body", text);
+                            .put("message", text)
+                            .put("key", "");
                         mChannel.push("send_message", node);
                         mEditText.setText("");
                     } catch (IOException e){
